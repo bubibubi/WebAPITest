@@ -391,6 +391,7 @@
             this.btnRemove.TabIndex = 25;
             this.btnRemove.Text = "Remove";
             this.btnRemove.UseVisualStyleBackColor = true;
+            this.btnRemove.Click += new System.EventHandler(this.btnRemove_Click);
             // 
             // btnLoad
             // 
@@ -402,6 +403,7 @@
             this.btnLoad.TabIndex = 24;
             this.btnLoad.Text = "Load";
             this.btnLoad.UseVisualStyleBackColor = true;
+            this.btnLoad.Click += new System.EventHandler(this.btnLoad_Click);
             // 
             // lstRequests
             // 

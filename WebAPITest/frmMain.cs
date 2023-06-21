@@ -142,15 +142,17 @@ namespace WebAPITest
                 };
 
                 using var result = client.SendAsync(httpRequestMessage).Result;
-                if (result.IsSuccessStatusCode)
+                string resultString;
+                try
                 {
-                    string resultString = result.Content.ReadAsStringAsync().Result;
-                    txtResult.Text = resultString;
+                    resultString = result.Content.ReadAsStringAsync().Result;
                 }
-                else
+                catch
                 {
-                    txtResult.Text = (int)result.StatusCode + " " + result.ReasonPhrase;
+                    resultString = string.Empty;
                 }
+
+                txtResult.Text = (int)result.StatusCode + " " + result.ReasonPhrase + "\r\n\r\n" + resultString;
             }
             catch (Exception exception)
             {
